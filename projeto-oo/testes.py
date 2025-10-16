@@ -1,4 +1,11 @@
 class Testes:
+    matriz1 = [
+            [7 , 8, 9],
+            [6, 5, 10],
+            [9, 3, 1]
+    ]
+
+
     def maior_valor():
         matriz = [   [7 , 8, 9],
             [6, 5, 7],
@@ -12,6 +19,7 @@ class Testes:
                     maior = elemento
 
         return maior
+
 
 
     def filtrar_pares(lista):
@@ -32,6 +40,8 @@ class Testes:
     print (filtrar_pares([1,2,3,4,5,6,7,8,9,10]))
 
     print (adicionar_asteriscos("Python é massa "))
+
+    print(matriz1) 
 
 t = Testes()
 print (t.fatorial(5))
