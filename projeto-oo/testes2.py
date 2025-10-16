@@ -1,4 +1,6 @@
-class Testes:
+from minhas_funcoes import calcula_media
+
+class Testes2:
 
     notas = [7.5, 8.2, 9, 6, 5, 7, 9.1, 10, 10, 8.5, 1.7, 2.3, 3.4, 4.5, 5.6]
 
@@ -14,15 +16,15 @@ class Testes:
             print(nota)
 
 
-t = Testes()
+t = Testes2()
 print(t.fatorial(5))
 
 t.imprimir_notas(t.notas)
 t.notas.append(6)
 t.imprimir_notas(t.notas)
 
-media = sum(t.notas) / len(t.notas)
-print("Média das notas:", media)    
+
+print("Média das notas:", media := calcula_media(t.notas))    
 
 notas_acima_media = [n for n in t.notas if n > media]
 print("Notas acima da média:", notas_acima_media)   
