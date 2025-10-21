@@ -24,3 +24,5 @@ def fatorial(self, n):
 def calcula_media(notas):
     return sum(notas) / len(notas)
 
+def calc_media2_notas(nota1, nota2):
+    return (nota1 + nota2) / 2
