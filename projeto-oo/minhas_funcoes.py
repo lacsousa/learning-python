@@ -10,15 +10,14 @@ def maior_valor():
         for elemento in linha :
             if elemento > maior :
                 maior = elemento
-
     return maior
 
 
-def fatorial(self, n):
+def fatorial(n):
     if n == 0 or n == 1:
         return 1
     else:
-        return n * self.fatorial(n - 1)
+        return n * fatorial(n - 1)
 
 
 def calcula_media(notas):

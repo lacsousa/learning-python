@@ -22,5 +22,5 @@ class Testes:
 
     print(matriz1) 
 
-t = Testes()
-print (t.fatorial(5))
+
+print ("\n", "Fatorial de 5: ", fatorial(5))
