@@ -14,6 +14,8 @@ def maior_valor():
 
 
 def fatorial(n):
+    if n < 0:
+        raise ValueError("Fatorial não está definido para números negativos.")
     if n == 0 or n == 1:
         return 1
     else:
