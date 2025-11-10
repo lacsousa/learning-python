@@ -1,5 +1,6 @@
 import streamlit as st
 
+
 from minhas_funcoes import calc_media2_notas
 
 st.title("Hello World in Streamlit")

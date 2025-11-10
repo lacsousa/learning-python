@@ -1,3 +1,7 @@
 __pycache__
 .vscode
 
+# Ambientes virtuais
+.venv/
+venv/
+env/
