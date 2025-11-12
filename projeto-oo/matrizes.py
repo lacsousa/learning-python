@@ -31,3 +31,17 @@ transposta = [
 print("Matriz: ", matriz)
 
 print("Matriz transposta:", transposta)
+
+
+
+matriz1 = [[1 , 2], [3, 4]]
+matriz2 = [[5 , 6], [7, 8]]
+concatenada = matriz1 + matriz2
+print (concatenada)
+
+
+matriz3 = [[1 , 2, 3], [4, 5, 6], [7, 8, 9]]
+if len(matriz3) == len( matriz3[0]):
+    print ("A matriz é quadrada .")
+else:
+    print ("A matriz não é quadrada .")
