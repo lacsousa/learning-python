@@ -35,3 +35,15 @@ print ("\n", contatos)
 
 
 print("\n Conjuntos ....")
+
+frutas = {'maças', 'peras', 'uvas'}
+print("\n", frutas)
+frutas.add('bananas')
+print("\n", frutas)
+frutas.remove('peras')
+print("\n", frutas)
+print("Verificando se 'maças' está no conjunto:", 'maças' in frutas)    
+
+frutas_tropicais = {'abacaxi', 'manga', 'laranjas'}
+todas_frutas = frutas.union(frutas_tropicais)
+print("\n Todas as frutas:", todas_frutas)
