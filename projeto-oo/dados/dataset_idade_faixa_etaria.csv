@@ -1,0 +1,501 @@
+idade,faixa_etaria
+99,Idoso
+6,Criança
+64,Idoso
+26,Jovem Adulto
+45,Adulto
+42,Adulto
+36,Adulto
+8,Criança
+4,Criança
+11,Criança
+22,Jovem Adulto
+16,Adolescente
+73,Idoso
+85,Idoso
+23,Jovem Adulto
+63,Idoso
+61,Idoso
+27,Jovem Adulto
+62,Idoso
+58,Adulto
+81,Idoso
+23,Jovem Adulto
+100,Idoso
+85,Idoso
+32,Adulto
+100,Idoso
+8,Criança
+61,Idoso
+14,Adolescente
+57,Adulto
+93,Idoso
+39,Adulto
+28,Jovem Adulto
+94,Idoso
+85,Idoso
+82,Idoso
+67,Idoso
+19,Jovem Adulto
+12,Criança
+73,Idoso
+87,Idoso
+2,Criança
+31,Adulto
+79,Idoso
+58,Adulto
+32,Adulto
+97,Idoso
+89,Idoso
+73,Idoso
+56,Adulto
+95,Idoso
+92,Idoso
+64,Idoso
+33,Adulto
+67,Idoso
+84,Idoso
+29,Jovem Adulto
+76,Idoso
+26,Jovem Adulto
+45,Adulto
+73,Idoso
+69,Idoso
+78,Idoso
+2,Criança
+20,Jovem Adulto
+46,Adulto
+8,Criança
+51,Adulto
+6,Criança
+83,Idoso
+50,Adulto
+24,Jovem Adulto
+53,Adulto
+48,Adulto
+75,Idoso
+7,Criança
+52,Adulto
+82,Idoso
+3,Criança
+55,Adulto
+79,Idoso
+61,Idoso
+91,Idoso
+91,Idoso
+30,Adulto
+27,Jovem Adulto
+4,Criança
+61,Idoso
+53,Adulto
+25,Jovem Adulto
+71,Idoso
+19,Jovem Adulto
+92,Idoso
+16,Adolescente
+23,Jovem Adulto
+0,Criança
+17,Adolescente
+99,Idoso
+89,Idoso
+55,Adulto
+43,Adulto
+36,Adulto
+9,Criança
+5,Criança
+5,Criança
+23,Jovem Adulto
+86,Idoso
+3,Criança
+69,Idoso
+89,Idoso
+69,Idoso
+28,Jovem Adulto
+31,Adulto
+47,Adulto
+67,Idoso
+11,Criança
+13,Adolescente
+3,Criança
+34,Adulto
+24,Jovem Adulto
+50,Adulto
+40,Adulto
+35,Adulto
+83,Idoso
+12,Criança
+17,Adolescente
+32,Adulto
+92,Idoso
+56,Adulto
+23,Jovem Adulto
+61,Idoso
+40,Adulto
+30,Adulto
+21,Jovem Adulto
+28,Jovem Adulto
+44,Adulto
+97,Idoso
+98,Idoso
+52,Adulto
+64,Idoso
+68,Idoso
+35,Adulto
+5,Criança
+6,Criança
+54,Adulto
+56,Adulto
+23,Jovem Adulto
+21,Jovem Adulto
+5,Criança
+40,Adulto
+45,Adulto
+13,Adolescente
+17,Adolescente
+8,Criança
+76,Idoso
+20,Jovem Adulto
+24,Jovem Adulto
+86,Idoso
+100,Idoso
+71,Idoso
+85,Idoso
+38,Adulto
+84,Idoso
+83,Idoso
+18,Jovem Adulto
+95,Idoso
+79,Idoso
+90,Idoso
+62,Idoso
+87,Idoso
+73,Idoso
+71,Idoso
+37,Adulto
+68,Idoso
+15,Adolescente
+28,Jovem Adulto
+70,Idoso
+93,Idoso
+67,Idoso
+30,Adulto
+96,Idoso
+56,Adulto
+32,Adulto
+32,Adulto
+18,Jovem Adulto
+76,Idoso
+70,Idoso
+52,Adulto
+37,Adulto
+49,Adulto
+89,Idoso
+31,Adulto
+70,Idoso
+73,Idoso
+67,Idoso
+90,Idoso
+65,Idoso
+17,Adolescente
+21,Jovem Adulto
+13,Adolescente
+10,Criança
+64,Idoso
+27,Jovem Adulto
+30,Adulto
+93,Idoso
+2,Criança
+16,Adolescente
+32,Adulto
+39,Adulto
+45,Adulto
+23,Jovem Adulto
+48,Adulto
+16,Adolescente
+2,Criança
+0,Criança
+76,Idoso
+59,Adulto
+100,Idoso
+81,Idoso
+40,Adulto
+7,Criança
+44,Adulto
+39,Adulto
+54,Adulto
+61,Idoso
+43,Adulto
+66,Idoso
+93,Idoso
+54,Adulto
+7,Criança
+6,Criança
+92,Idoso
+99,Idoso
+12,Criança
+22,Jovem Adulto
+98,Idoso
+91,Idoso
+82,Idoso
+75,Idoso
+13,Adolescente
+84,Idoso
+77,Idoso
+78,Idoso
+33,Adulto
+100,Idoso
+19,Jovem Adulto
+47,Adulto
+88,Idoso
+44,Adulto
+89,Idoso
+9,Criança
+87,Idoso
+59,Adulto
+88,Idoso
+6,Criança
+21,Jovem Adulto
+55,Adulto
+67,Idoso
+43,Adulto
+30,Adulto
+58,Adulto
+63,Idoso
+7,Criança
+41,Adulto
+100,Idoso
+29,Jovem Adulto
+22,Jovem Adulto
+87,Idoso
+53,Adulto
+77,Idoso
+10,Criança
+33,Adulto
+23,Jovem Adulto
+51,Adulto
+47,Adulto
+51,Adulto
+19,Jovem Adulto
+34,Adulto
+90,Idoso
+87,Idoso
+76,Idoso
+12,Criança
+63,Idoso
+82,Idoso
+15,Adolescente
+25,Jovem Adulto
+98,Idoso
+43,Adulto
+80,Idoso
+55,Adulto
+52,Adulto
+11,Criança
+43,Adulto
+26,Jovem Adulto
+12,Criança
+36,Adulto
+41,Adulto
+48,Adulto
+6,Criança
+21,Jovem Adulto
+45,Adulto
+44,Adulto
+35,Adulto
+18,Jovem Adulto
+10,Criança
+83,Idoso
+66,Idoso
+81,Idoso
+39,Adulto
+8,Criança
+38,Adulto
+46,Adulto
+87,Idoso
+98,Idoso
+61,Idoso
+3,Criança
+49,Adulto
+8,Criança
+45,Adulto
+27,Jovem Adulto
+67,Idoso
+95,Idoso
+31,Adulto
+30,Adulto
+74,Idoso
+44,Adulto
+35,Adulto
+87,Idoso
+33,Adulto
+51,Adulto
+15,Adolescente
+83,Idoso
+65,Idoso
+37,Adulto
+55,Adulto
+62,Idoso
+71,Idoso
+41,Adulto
+6,Criança
+56,Adulto
+28,Jovem Adulto
+76,Idoso
+81,Idoso
+12,Criança
+94,Idoso
+84,Idoso
+43,Adulto
+50,Adulto
+9,Criança
+25,Jovem Adulto
+34,Adulto
+2,Criança
+76,Idoso
+54,Adulto
+50,Adulto
+56,Adulto
+42,Adulto
+34,Adulto
+86,Idoso
+84,Idoso
+36,Adulto
+30,Adulto
+30,Adulto
+33,Adulto
+70,Idoso
+96,Idoso
+73,Idoso
+76,Idoso
+65,Idoso
+5,Criança
+86,Idoso
+0,Criança
+13,Adolescente
+48,Adulto
+58,Adulto
+74,Idoso
+89,Idoso
+84,Idoso
+1,Criança
+15,Adolescente
+87,Idoso
+77,Idoso
+83,Idoso
+18,Jovem Adulto
+89,Idoso
+8,Criança
+32,Adulto
+51,Adulto
+82,Idoso
+76,Idoso
+99,Idoso
+29,Jovem Adulto
+79,Idoso
+69,Idoso
+51,Adulto
+67,Idoso
+51,Adulto
+86,Idoso
+58,Adulto
+58,Adulto
+36,Adulto
+8,Criança
+86,Idoso
+29,Jovem Adulto
+37,Adulto
+50,Adulto
+31,Adulto
+20,Jovem Adulto
+24,Jovem Adulto
+18,Jovem Adulto
+32,Adulto
+87,Idoso
+32,Adulto
+38,Adulto
+96,Idoso
+0,Criança
+6,Criança
+67,Idoso
+3,Criança
+64,Idoso
+11,Criança
+85,Idoso
+54,Adulto
+62,Idoso
+90,Idoso
+71,Idoso
+17,Adolescente
+49,Adulto
+93,Idoso
+57,Adulto
+69,Idoso
+26,Jovem Adulto
+75,Idoso
+80,Idoso
+80,Idoso
+53,Adulto
+95,Idoso
+36,Adulto
+59,Adulto
+7,Criança
+64,Idoso
+42,Adulto
+19,Jovem Adulto
+2,Criança
+37,Adulto
+47,Adulto
+99,Idoso
+73,Idoso
+0,Criança
+10,Criança
+2,Criança
+61,Idoso
+37,Adulto
+99,Idoso
+52,Adulto
+100,Idoso
+47,Adulto
+100,Idoso
+85,Idoso
+75,Idoso
+20,Jovem Adulto
+6,Criança
+62,Idoso
+83,Idoso
+26,Jovem Adulto
+56,Adulto
+75,Idoso
+67,Idoso
+59,Adulto
+99,Idoso
+50,Adulto
+87,Idoso
+83,Idoso
+13,Adolescente
+10,Criança
+84,Idoso
+85,Idoso
+17,Adolescente
+8,Criança
+52,Adulto
+45,Adulto
+93,Idoso
+18,Jovem Adulto
+17,Adolescente
+49,Adulto
+60,Idoso
+98,Idoso
+2,Criança
+55,Adulto
+30,Adulto
+2,Criança
+49,Adulto
+27,Jovem Adulto
+45,Adulto
+22,Jovem Adulto
+59,Adulto
+39,Adulto
+82,Idoso
+55,Adulto
+49,Adulto

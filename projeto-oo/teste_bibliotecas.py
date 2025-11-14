@@ -13,3 +13,7 @@ df = pd.read_csv("dados/tabela_produtos_missing.csv")
 vendas_produto_a = df[df["nome_produto"].str.lower().str.startswith("a", na=False)]
 print("\nVendas do Produto que começam com 'A':")
 print(vendas_produto_a)
+
+nulos = df.isnull().sum()
+print("\nContagem de valores nulos por coluna:")
+print(nulos)    
