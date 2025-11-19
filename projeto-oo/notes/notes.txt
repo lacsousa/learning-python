@@ -5,3 +5,11 @@ python -m venv .venv
 source .venv/bin/activate  # Linux/macOS
 .venv\Scripts\activate     # Windows
 pip install -r requirements.txt
+
+
+**** Para rodar o algoritmo KNN
+
+    pip install scikit-learn pandas matplotlib seaborn joblib
+
+    python knn_train_idade.py 
+    
