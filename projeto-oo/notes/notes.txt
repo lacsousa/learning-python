@@ -1,5 +1,5 @@
 
-* Para recriar o ambiente virtual 
+* Para recriar o ambiente virtual - Dúvidas verificar vídeo Aula 04 - Sandeco Python
 
 python -m venv .venv
 source .venv/bin/activate  # Linux/macOS
@@ -13,3 +13,6 @@ pip install -r requirements.txt
 
     python knn_train_idade.py 
     
+*** Imagens
+
+    pip install Pillow
