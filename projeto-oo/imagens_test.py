@@ -1,6 +1,8 @@
-from PIL import Image
-import os
+from PIL import Image 
+import os 
 
-imagem = Image.open("imagens/passaros.jpg")
+print(os.getcwd())
+
+imagem = Image.open("../imagens/passaros.jpg") 
+
 imagem.show()
-
