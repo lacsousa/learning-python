@@ -1,0 +1,10 @@
+langchain
+
+__pycache__
+.vscode
+
+# Ambientes virtuais
+.venv/
+venv/
+env/
+*.env
