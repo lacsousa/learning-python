@@ -1,7 +1,9 @@
 from langchain_openai import ChatOpenAI
 from langchain.prompts import PromptTemplate
-from langchain_core.output_parsers import StrOutputParser
+from langchain_core.output_parsers import StrOutputParser, JsonOutputParser
+from pydantic import BaseModel, Field
 from dotenv import load_dotenv
+from langchain.globals import set_debug
 import os
 
 # LangChain é uma biblioteca de código aberto que facilita a construção de aplicações de linguagem natural. 
@@ -9,16 +11,27 @@ import os
 # e permite criar fluxos de trabalho personalizados para atender às necessidades específicas do seu projeto.
 # Não tem custo para ser usado, mas o uso da API do OpenAI pode ter custos associados, dependendo do modelo e da quantidade de tokens processados.
 
+set_debug(True) # Ativa o modo de depuração para exibir informações detalhadas sobre a execução do código
 
 load_dotenv()
 minha_api_key = os.getenv("OPENAI_API_KEY")
 
 
+class CitySuggestion(BaseModel):
+    cidade: str = Field(..., description="A cidade recomendada para visitar")
+    motivo: str = Field(..., description="O motivo pelo qual a cidade é recomendada")
+
+parseador_json = JsonOutputParser(pydantic_object=CitySuggestion)
+
+
 promptModelCity = PromptTemplate(
     template="""
         Sugira uma cidade dado o meu interesse por {interesse}.
+        {output_parser}
     """, 
-    input_variables=["interesse"]
+    input_variables=["interesse"],
+    partial_variables={"output_parser": parseador_json.get_format_instructions()}
+
 )
 
 
@@ -28,7 +41,7 @@ model = ChatOpenAI(
     api_key=minha_api_key
 )
 
-chain = promptModelCity | model | StrOutputParser()
+chain = promptModelCity | model | parseador_json
 
 response = chain.invoke(
     {
