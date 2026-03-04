@@ -28,6 +28,7 @@ suggestion_prompt = ChatPromptTemplate.from_messages(
 chain = suggestion_prompt | my_model | StrOutputParser()
 
 memory = {}
+
 session = "langchain_python_class"
 
 
@@ -58,7 +59,7 @@ for one_question in questions:
         config={"session_id": session}
     )
 
-    print(f"Usuário: {one_question}")
-    print(f"IA: {response}", "\n")
+    print(f"Usuário: ", one_question)
+    print(f"IA: ", response, "\n")
     print("-" * 50, "\n")
 
