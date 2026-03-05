@@ -2,7 +2,11 @@ from langchain_openai import ChatOpenAI
 from langchain_core.prompts import ChatPromptTemplate
 from langchain_core.output_parsers import StrOutputParser
 from dotenv import load_dotenv
+from langgraph.graph import StateGraph, START, END
+from langchain_core.runnables import RunnableConfig
 
+
+import asyncio
 from typing import Literal, TypedDict
 
 import os
@@ -47,17 +51,45 @@ router_prompt = ChatPromptTemplate.from_messages(
 class Route(TypedDict):
     route: Literal["praia", "montanha"]
 
+class State(TypedDict):
+    query: str
+    route: Route
+    response: str
+
 router = router_prompt | my_model.with_structured_output(Route)
 
 
-def response(pergunta :str):
-    route = router.invoke({"query": pergunta})["route"].strip().lower()
+async def router_node(state: State, config: RunnableConfig):
+    return { "route" : await router.ainvoke({"query" : state["query"]}, config)}
 
-    print(f"Rota selecionada: {route}")
 
-    if route == "praia":
-        return beach_assistant_chain.invoke({"query": pergunta})
-    return mountain_assistant_chain.invoke({"query": pergunta})
-    
+async def beach_node(state: State, config: RunnableConfig):
+    return { "response" : await beach_assistant_chain.ainvoke({"query" : state["query"]}, config)}
 
-print(response("Quero visitar um lugar no Brasil, famoso por praias e cultura. Pode sugerir?"))
+async def mountain_node(state: State, config: RunnableConfig):
+    return { "response" : await mountain_assistant_chain.ainvoke({"query" : state["query"]}, config)}
+
+
+def choose_node(state: State) -> Literal["praia", "montanha"]:
+    return "praia" if state["route"]["route"] == "praia" else "montanha"
+
+graph = StateGraph(State)
+graph.add_node("rotear", router_node)
+graph.add_node("praia", beach_node)
+graph.add_node("montanha", mountain_node)
+
+graph.add_edge(START, "rotear")
+graph.add_conditional_edges("rotear", choose_node)
+graph.add_edge("praia", END)
+graph.add_edge("montanha", END)
+
+app = graph.compile()
+
+async def main():
+    #query = "Quero visitar um lugar no Brasil, famoso por praias e cultura. Pode sugerir?"
+    query = "Quero escalar montanhas no Brasil. Pode sugerir?"
+    state = {"query": query}
+    result = await app.ainvoke(state)
+    return result["response"]
+
+print(asyncio.run(main()))
