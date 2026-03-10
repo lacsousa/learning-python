@@ -1,6 +1,8 @@
 
 *** Install Dependencies
 
+    pip install uv
+    
     uv venv .venv
     source .venv/bin/activate
     uv pip install --refresh -r requirements.txt
