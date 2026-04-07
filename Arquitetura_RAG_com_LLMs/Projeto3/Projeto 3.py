@@ -11,7 +11,7 @@ import os
 import streamlit as st
 
 # Injeta a chave como variável de ambiente
-os.environ["OPENAI_API_KEY"] = "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"
+os.environ["OPENAI_API_KEY"] = ""
 
 # Loaders e chunking
 from langchain_community.document_loaders import PyPDFLoader
