@@ -11,7 +11,9 @@ import os
 import streamlit as st
 
 # Injeta a chave como variável de ambiente
-os.environ["OPENAI_API_KEY"] = ""
+from dotenv import load_dotenv
+
+load_dotenv()
 
 # Loaders e chunking
 from langchain_community.document_loaders import PyPDFLoader
@@ -49,10 +51,13 @@ def carregar_documentos():
     """
     Carrega os PDFs de políticas internas de RH
     """
+    # Diretório onde este script está localizado
+    script_dir = os.path.dirname(os.path.abspath(__file__))
+
     caminhos = [
-        "politica_ferias.pdf",
-        "politica_home_office.pdf",
-        "codigo_conduta.pdf"
+        os.path.join(script_dir, "politica_ferias.pdf"),
+        os.path.join(script_dir, "politica_home_office.pdf"),
+        os.path.join(script_dir, "codigo_conduta.pdf"),
     ]
 
     documentos = []
@@ -62,7 +67,7 @@ def carregar_documentos():
         docs = loader.load()
 
         for doc in docs:
-            doc.metadata["documento"] = caminho
+            doc.metadata["documento"] = os.path.basename(caminho)
 
         documentos.extend(docs)
 
