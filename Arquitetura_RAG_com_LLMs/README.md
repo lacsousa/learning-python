@@ -2,6 +2,87 @@
 
 Este diretório contém notebooks e código de exemplo para um fluxo RAG (Retrieval-Augmented Generation) usando LangChain, Chroma e OpenAI.
 
+---
+
+## 🐍 Ambiente Virtual (venv)
+
+### 1. Criar o ambiente virtual
+
+Execute **uma única vez**, na raiz do projeto (`Arquitetura_RAG_com_LLMs/`):
+
+```bash
+python3 -m venv .venv
+```
+
+### 2. Ativar o ambiente virtual
+
+**macOS / Linux:**
+```bash
+source .venv/bin/activate
+```
+
+**Windows (PowerShell):**
+```powershell
+.venv\Scripts\Activate.ps1
+```
+
+**Windows (CMD):**
+```cmd
+.venv\Scripts\activate.bat
+```
+
+> Quando ativo, o prompt do terminal exibirá `(.venv)` no início.
+
+### 3. Instalar as dependências
+
+Com o ambiente ativo, instale os pacotes necessários:
+
+```bash
+pip install --upgrade pip
+pip install langchain==0.1.20 langchain-community==0.0.38 langchain-openai==0.1.7 \
+            pypdf chromadb python-dotenv openai ipykernel nbclient nbformat
+```
+
+### 4. Desativar o ambiente virtual
+
+Quando terminar, basta rodar:
+
+```bash
+deactivate
+```
+
+### 5. Verificar se o venv está ativo
+
+```bash
+which python3
+```
+
+Se o caminho retornado contiver `.venv/bin/python3`, o ambiente está ativo. ✅
+
+Exemplo de saída esperada:
+```
+/caminho/para/Arquitetura_RAG_com_LLMs/.venv/bin/python3
+```
+
+### 6. Listar dependências instaladas
+
+Ver todos os pacotes instalados (formato tabela):
+```bash
+pip list
+```
+
+Ver no formato `pacote==versão` (útil para copiar ou exportar):
+```bash
+pip freeze
+```
+
+Gerar o arquivo `requirements.txt` com todas as dependências atuais:
+```bash
+pip freeze > requirements.txt
+```
+
+---
+
 Resumo das alterações e correções realizadas
 
 - Criado ambiente virtual local: `.venv/` (Python 3.12 recomendado).
