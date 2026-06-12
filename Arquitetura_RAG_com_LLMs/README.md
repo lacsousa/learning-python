@@ -40,7 +40,7 @@ Com o ambiente ativo, instale os pacotes necessários:
 ```bash
 pip install --upgrade pip
 pip install langchain==0.1.20 langchain-community==0.0.38 langchain-openai==0.1.7 \
-            pypdf chromadb python-dotenv openai ipykernel nbclient nbformat
+            pypdf chromadb python-dotenv openai ipykernel nbclient nbformat streamlit
 ```
 
 ### 4. Desativar o ambiente virtual
@@ -83,22 +83,62 @@ pip freeze > requirements.txt
 
 ---
 
-Resumo das alterações e correções realizadas
+## 🚀 Executando os Projetos
 
+### Projeto 1 — Agente RAG para Regras do Futebol
+
+Executar como script Python (recomendado):
+```bash
+cd Projeto1
+python3 projeto1.py
+```
+
+Executar como notebook Jupyter:
+```bash
+source .venv/bin/activate
+jupyter lab
+# Abra "Projeto 1.ipynb" e selecione o kernel "Python (Arquitetura .venv)"
+```
+
+### Projeto 3 — Agente de RH com Streamlit
+
+Apps Streamlit **não** são executados com `python3`. Use sempre:
+```bash
+streamlit run "Projeto3/Projeto 3.py"
+```
+
+O app abrirá automaticamente no navegador em `http://localhost:8501`.
+Para encerrar: `Ctrl+C` no terminal.
+
+---
+
+## 📋 Resumo das correções realizadas
+
+### Sessão inicial
 - Criado ambiente virtual local: `.venv/` (Python 3.12 recomendado).
 - Criado arquivo `.env` na raiz do projeto para `OPENAI_API_KEY` (NÃO comitar).
 - Registrado kernel Jupyter: `arquitetura-venv` (display name: "Python (Arquitetura .venv)").
 - Patch aplicado em `Projeto 1.ipynb` para:
   - Verificar existência do PDF `regras_futebol.pdf` antes de tentar carregá-lo.
   - Ler `OPENAI_API_KEY` via `os.getenv` e lançar erro claro se ausente.
-  - Usar `OpenAIEmbeddings(..., openai_api_key=openai_key)` e `ChatOpenAI(..., openai_api_key=openai_key)` explicitamente com a chave enviada pelo ambiente.
+  - Usar `OpenAIEmbeddings` e `ChatOpenAI` com a chave explícita via ambiente.
 - Executado e salvo notebook com saídas em: `Projeto1/Projeto 1.executed_with_env.ipynb`.
 
-Principais problemas resolvidos
+### Sessão de correções (Projeto 1 e 3)
+- **Notebook → Script Python:** `Projeto 1.ipynb` convertido em `Projeto1/projeto1.py` com:
+  - `load_dotenv()` adicionado para carregar o `.env` corretamente.
+  - Caminhos de arquivo robustos usando `Path(__file__).resolve()`.
+  - Loop interativo de perguntas ao final do script.
+- **Instalação do `streamlit`:** adicionado ao `.venv` para rodar o Projeto 3.
+- **Correção de caminhos no Projeto 3:** `Projeto 3.py` usava caminhos relativos (`"politica_ferias.pdf"`) que falhavam dependendo de onde o app era iniciado. Corrigido para usar `os.path.abspath(__file__)`, tornando os caminhos sempre relativos à pasta do script.
+- **Gerado `requirements.txt`** com todas as dependências atuais via `pip freeze > requirements.txt`.
 
-- Erro de kernel/`ipykernel` faltando: resolvido instalando `ipykernel` no `.venv` e registrando o kernel.
-- Falha ao carregar PDF: notebook agora verifica o arquivo e mostra instrução clara se ausente.
-- Erros de autenticação OpenAI: adicionada verificação de `OPENAI_API_KEY` e instruções para colocar a chave em `.env` (e não comitar).
+### Principais problemas resolvidos
+- `OPENAI_API_KEY` não carregada: faltava `load_dotenv()` — resolvido.
+- Erro de kernel/`ipykernel` faltando: resolvido instalando `ipykernel` e registrando o kernel.
+- `ModuleNotFoundError: No module named 'streamlit'`: resolvido com `pip install streamlit`.
+- `ValueError: File path politica_ferias.pdf is not a valid file or url`: caminhos absolutos corrigidos no Projeto 3.
+- Comando errado para Streamlit: `python3 app.py` não funciona — o correto é `streamlit run app.py`.
 
 Requisitos (instalar no `.venv` criado)
 
