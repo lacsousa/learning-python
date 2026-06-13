@@ -11,13 +11,13 @@ Siga os passos abaixo para configurar seu ambiente e utilizar os scripts do proj
 
 **Windows:**
 ```bash
-python -m venv langchain
+uv venv langchain
 langchain\Scripts\activate
 ```
 
 **Mac/Linux:**
 ```bash
-python3 -m venv langchain
+uv venv langchain
 source langchain/bin/activate
 ```
 
@@ -25,7 +25,7 @@ source langchain/bin/activate
 
 Utilize o comando abaixo para instalar as bibliotecas necessárias:
 ```bash
-pip install -r requirements.txt
+uv pip install -r requirements.txt
 ```
 
 ### 3. Configurar Chave da OpenAI

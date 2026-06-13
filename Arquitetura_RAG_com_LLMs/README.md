@@ -11,7 +11,7 @@ Este diretório contém notebooks e código de exemplo para um fluxo RAG (Retrie
 Execute **uma única vez**, na raiz do projeto (`Arquitetura_RAG_com_LLMs/`):
 
 ```bash
-python3 -m venv .venv
+uv venv
 ```
 
 ### 2. Ativar o ambiente virtual
@@ -38,8 +38,7 @@ source .venv/bin/activate
 Com o ambiente ativo, instale os pacotes necessários:
 
 ```bash
-pip install --upgrade pip
-pip install langchain==0.1.20 langchain-community==0.0.38 langchain-openai==0.1.7 \
+uv pip install langchain==0.1.20 langchain-community==0.0.38 langchain-openai==0.1.7 \
             pypdf chromadb python-dotenv openai ipykernel nbclient nbformat streamlit
 ```
 
@@ -68,17 +67,17 @@ Exemplo de saída esperada:
 
 Ver todos os pacotes instalados (formato tabela):
 ```bash
-pip list
+uv pip list
 ```
 
 Ver no formato `pacote==versão` (útil para copiar ou exportar):
 ```bash
-pip freeze
+uv pip freeze
 ```
 
 Gerar o arquivo `requirements.txt` com todas as dependências atuais:
 ```bash
-pip freeze > requirements.txt
+uv pip freeze > requirements.txt
 ```
 
 ---
@@ -131,7 +130,7 @@ Para encerrar: `Ctrl+C` no terminal.
   - Loop interativo de perguntas ao final do script.
 - **Instalação do `streamlit`:** adicionado ao `.venv` para rodar o Projeto 3.
 - **Correção de caminhos no Projeto 3:** `Projeto 3.py` usava caminhos relativos (`"politica_ferias.pdf"`) que falhavam dependendo de onde o app era iniciado. Corrigido para usar `os.path.abspath(__file__)`, tornando os caminhos sempre relativos à pasta do script.
-- **Gerado `requirements.txt`** com todas as dependências atuais via `pip freeze > requirements.txt`.
+- **Gerado `requirements.txt`** com todas as dependências atuais via `uv pip freeze > requirements.txt`.
 
 ### Principais problemas resolvidos
 - `OPENAI_API_KEY` não carregada: faltava `load_dotenv()` — resolvido.
@@ -146,11 +145,10 @@ Recomendo criar e usar um ambiente virtual por projeto. Exemplos de comandos:
 
 ```bash
 # Na pasta do projeto
-python3 -m venv .venv
+uv venv
 source .venv/bin/activate
 # Instalar dependências necessárias
-pip install --upgrade pip
-pip install ipykernel nbclient nbformat pypdf chromadb langchain==0.1.20 \
+uv pip install ipykernel nbclient nbformat pypdf chromadb langchain==0.1.20 \
   langchain-community==0.0.38 langchain-openai==0.1.7 openai python-dotenv
 ```
 
