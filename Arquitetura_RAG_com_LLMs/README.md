@@ -109,6 +109,61 @@ streamlit run "Projeto3/Projeto 3.py"
 O app abrirá automaticamente no navegador em `http://localhost:8501`.
 Para encerrar: `Ctrl+C` no terminal.
 
+### Projeto 4 — Agente de RH com RAG + Reranking (versão melhorada)
+
+Evolução do Projeto 3, implementando **todas as fases** da especificação
+[`Projeto4/spec-rag.md`](Projeto4/spec-rag.md). Mantém a simplicidade e o custo baixo.
+
+Executar (Streamlit):
+```bash
+streamlit run Projeto4/Projeto4.py
+```
+
+O app abre em `http://localhost:8501`. Na **primeira pergunta**, o índice vetorial
+é criado e persistido em `Projeto4/chroma_rh/` (os embeddings rodam uma única vez).
+
+**Melhorias implementadas (ver `spec-rag.md`):**
+
+| # | Melhoria | Onde |
+|---|----------|------|
+| 1 | Reranking em **uma única chamada** (batch + JSON) — reduz ~8x o custo dessa etapa | `rerank_documentos` |
+| 2 | Vector Store **não** reconstruído a cada execução (carrega o índice persistido) | `criar_vectorstore` |
+| 3 | Parsing **robusto** do score de reranking (sem `except:` nu) | `_parse_scores` |
+| 4 | Modelos **configuráveis por etapa** (reranking vs. resposta) | constantes `LLM_*_MODEL` |
+| 5 | Prompt com **fallback anti-alucinação** | `responder_pergunta` |
+| 6 | Filtro por metadados na recuperação — **opcional, desligado por padrão** | `USAR_FILTRO_CATEGORIA` |
+| 7 | Conjunto de **avaliação mínimo** | `Projeto4/eval_perguntas.py` |
+
+**Botão "🔄 Reconstruir índice"** (sidebar): apaga `chroma_rh/` e os caches.
+Use quando os PDFs de políticas forem alterados.
+
+**Ajustes de modelo (custo baixo, upgrade seletivo)** — no topo de `Projeto4.py`:
+```python
+EMBEDDING_MODEL  = "text-embedding-3-small"  # trocar p/ "-large" só se o recall falhar
+LLM_RERANK_MODEL = "gpt-4o-mini"             # tarefa simples; modelo barato basta
+LLM_ANSWER_MODEL = "gpt-4o-mini"             # subir p/ "gpt-4o" só se a qualidade exigir
+```
+
+**Filtro por categoria (item 6)** vem **desligado** (`USAR_FILTRO_CATEGORIA = False`):
+com apenas 3 PDFs o ganho é marginal e a categoria é classificada por substring
+(ruidosa), podendo excluir o trecho certo em perguntas cruzadas. Ligue quando a base
+crescer e a categorização for confiável.
+
+**Rodando a avaliação (item 7):**
+```bash
+cd Projeto4
+../.venv/bin/python eval_perguntas.py
+```
+Mede *roteamento* (o PDF-fonte esperado é citado) e *cobertura* (resposta não-vazia
+e diferente do fallback). Como o índice já está persistido, **não** há re-embedding —
+cada pergunta gasta ~2 chamadas ao LLM. Use para comparar modelos antes de trocá-los.
+
+> **Baseline esperado: 4/5.** O caso "regras para concessão de férias" é um
+> *deve-recusar* conhecido: o PDF não traz essa lista, então o fallback
+> anti-alucinação dispara corretamente. É mantido de propósito como teste de
+> regressão (se passar, provavelmente será por alucinação). Detalhes no cabeçalho
+> de [`eval_perguntas.py`](Projeto4/eval_perguntas.py).
+
 ---
 
 ## 📋 Resumo das correções realizadas
