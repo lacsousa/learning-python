@@ -1,6 +1,8 @@
 .DS_Store
 
-
 .vscode/settings.json
 .env
 
+# Chroma DB directories
+chroma_*/
+chroma/
